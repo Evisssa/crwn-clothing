@@ -1,6 +1,6 @@
-import  CategoryItem from './components/category-item/category-item.component'
 import './categories.style.scss'
-  const App = ()=> {
+
+const CategoriesContainer=()=>{
 
   const categories = [
     {
@@ -29,15 +29,13 @@ import './categories.style.scss'
       "imageUrl": "https://i.ibb.co/R70vBrQ/men.png"
     }
   ]
-  
-  return (
-    <div className="categories-container">
 
-      {categories.map((category) =>
-      (<CategoryItem key={category.id}  category={category}/>)
-  )}
-    </div>
-  );
-}
-
-export default App;
+    return (
+        <div className="categories-container">
+    
+          {categories.map((category) =>
+          (<CategoryItem key={category.id}  category={category}/>)
+      )}
+        </div>
+      );
+} 
