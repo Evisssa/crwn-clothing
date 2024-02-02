@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE AppModule SYSTEM "jbo_03_01.dtd">
+<!---->
+<AppModule
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="AppModule"
+  Version="12.1.3.10.47"
+  InheritPersonalization="merge"
+  ClearCacheOnRollback="true">
+  <ViewUsage
+    Name="BiographiesView1"
+    ViewObjectName="model.vo.BiographiesView"/>
+  <ViewUsage
+    Name="CountriesView1"
+    ViewObjectName="model.vo.CountriesView"/>
+  <ViewUsage
+    Name="DepartmentsView1"
+    ViewObjectName="model.vo.DepartmentsView"/>
+  <ViewUsage
+    Name="EmployeesView1"
+    ViewObjectName="model.vo.EmployeesView"/>
+  <ViewUsage
+    Name="ImageUsagesView1"
+    ViewObjectName="model.vo.ImageUsagesView"/>
+  <ViewUsage
+    Name="ImagesView1"
+    ViewObjectName="model.vo.ImagesView"/>
+  <ViewUsage
+    Name="JobHistoryView1"
+    ViewObjectName="model.vo.JobHistoryView"/>
+  <ViewUsage
+    Name="JobsView1"
+    ViewObjectName="model.vo.JobsView"/>
+  <ViewUsage
+    Name="LocationsView1"
+    ViewObjectName="model.vo.LocationsView"/>
+  <ViewUsage
+    Name="MainSystemMenuView1"
+    ViewObjectName="model.vo.MainSystemMenuView"/>
+  <ViewUsage
+    Name="PsTxnView1"
+    ViewObjectName="model.vo.PsTxnView"/>
+  <ViewUsage
+    Name="RegionsView1"
+    ViewObjectName="model.vo.RegionsView"/>
+  <ViewUsage
+    Name="SubMenuView1"
+    ViewObjectName="model.vo.SubMenuView"/>
+</AppModule>

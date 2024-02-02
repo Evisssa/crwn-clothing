@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.1.3.10.47" id="DataBindings"
+             SeparateXMLFiles="false" Package="view" ClientType="Generic">
+  <definitionFactories>
+    <factory nameSpace="http://xmlns.oracle.com/adf/controller/binding"
+             className="oracle.adf.controller.internal.binding.TaskFlowBindingDefFactoryImpl"/>
+    <dtfactory className="oracle.adf.controller.internal.dtrt.binding.BindingDTObjectFactory"/>
+  </definitionFactories>
+  <pageMap>
+    <page path="/first_pages_deri27/department.jsf" usageId="view_departmentPageDef"/>
+    <page path="/first_pages_deri27/main.jsf" usageId="view_mainPageDef"/>
+    <page path="/dept2.jsff" usageId="view_dept2PageDef"/>
+    <page path="/emp2.jsff" usageId="view_emp2PageDef"/>
+    <page path="/first_pages_deri27/dept1.jsff" usageId="view_dept1PageDef"/>
+    <page path="/first_pages_deri27/emp1.jsff" usageId="view_emp1PageDef"/>
+    <page path="/first_pages_deri27/trainMainPage.jsf" usageId="view_trainMainPagePageDef"/>
+    <page path="/first_pages_deri27/departmentTrain.jsff" usageId="view_departmentTrainPageDef"/>
+    <page path="/first_pages_deri27/employeeTrain.jsff" usageId="view_employeeTrainPageDef"/>
+    <page path="/WEB-INF/task-flow-definition_transaction.xml#task-flow-definition_transaction@CreateInsert"
+          usageId="view_task_flow_definition_transaction_task_flow_definition_transaction_CreateInsertPageDef"/>
+    <page path="/first_pages_deri27/NewDepartment.jsff" usageId="view_NewDepartmentPageDef"/>
+    <page path="/first_pages_deri27/NewEmp.jsff" usageId="view_NewEmpPageDef"/>
+    <page path="/first_pages_deri27/NewDeptSummary.jsff" usageId="view_NewDeptSummaryPageDef"/>
+    <page path="/first_pages_deri27/main_transactions.jsf" usageId="view_main_transactionsPageDef"/>
+    <page path="/deptUseTemplate.jsf" usageId="view_deptUseTemplatePageDef"/>
+    <page path="/empUseTemplate.jsf" usageId="view_empUseTemplatePageDef"/>
+    <page path="/uiComponents.jsf" usageId="view_uiComponentsPageDef"/>
+    <page path="PageFlow#CreateInsert" usageId="view_adfc_config___CreateInsertPageDef"/>
+    <page path="/datacontrol.jsf" usageId="view_datacontrolPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="view_departmentPageDef" path="view.pageDefs.departmentPageDef"/>
+    <page id="view_mainPageDef" path="view.pageDefs.mainPageDef"/>
+    <page id="view_dept2PageDef" path="view.pageDefs.dept2PageDef"/>
+    <page id="view_emp2PageDef" path="view.pageDefs.emp2PageDef"/>
+    <page id="view_dept1PageDef" path="view.pageDefs.dept1PageDef"/>
+    <page id="view_emp1PageDef" path="view.pageDefs.emp1PageDef"/>
+    <page id="view_trainMainPagePageDef" path="view.pageDefs.trainMainPagePageDef"/>
+    <page id="view_departmentTrainPageDef" path="view.pageDefs.departmentTrainPageDef"/>
+    <page id="view_employeeTrainPageDef" path="view.pageDefs.employeeTrainPageDef"/>
+    <page id="view_task_flow_definition_transaction_task_flow_definition_transaction_CreateInsertPageDef"
+          path="view.pageDefs.task_flow_definition_transaction_task_flow_definition_transaction_CreateInsertPageDef"/>
+    <page id="view_NewDepartmentPageDef" path="view.pageDefs.NewDepartmentPageDef"/>
+    <page id="view_NewEmpPageDef" path="view.pageDefs.NewEmpPageDef"/>
+    <page id="view_NewDeptSummaryPageDef" path="view.pageDefs.NewDeptSummaryPageDef"/>
+    <page id="view_main_transactionsPageDef" path="view.pageDefs.main_transactionsPageDef"/>
+    <page id="view_deptUseTemplatePageDef" path="view.pageDefs.deptUseTemplatePageDef"/>
+    <page id="view_empUseTemplatePageDef" path="view.pageDefs.empUseTemplatePageDef"/>
+    <page id="view_uiComponentsPageDef" path="view.pageDefs.uiComponentsPageDef"/>
+    <page id="view_adfc_config___CreateInsertPageDef" path="view.pageDefs.adfc_config___CreateInsertPageDef"/>
+    <page id="view_datacontrolPageDef" path="view.pageDefs.datacontrolPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="AppModuleDataControl" Package="model"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="AppModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+    <BC4JDataControl id="AppModuleDataControl1" Package="model.eo"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="AppModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>

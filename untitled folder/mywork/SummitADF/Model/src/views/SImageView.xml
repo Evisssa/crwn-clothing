@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="SImageView"
+  Version="12.1.3.10.47"
+  InheritPersonalization="merge"
+  SelectListFlags="1"
+  FromListFlags="1"
+  WhereFlags="1"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  SelectAllAttributes="false"
+  PageIterMode="Full">
+  <EntityUsage
+    Name="SImage"
+    Entity="entities.SImage"/>
+  <ViewAttribute
+    Name="Id"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="SImage"
+    AliasName="ID"/>
+  <ViewAttribute
+    Name="Format"
+    PrecisionRule="true"
+    EntityAttrName="Format"
+    EntityUsage="SImage"
+    AliasName="FORMAT"/>
+  <ViewAttribute
+    Name="UseFilename"
+    PrecisionRule="true"
+    EntityAttrName="UseFilename"
+    EntityUsage="SImage"
+    AliasName="USE_FILENAME"/>
+  <ViewAttribute
+    Name="Filename"
+    PrecisionRule="true"
+    EntityAttrName="Filename"
+    EntityUsage="SImage"
+    AliasName="FILENAME"/>
+  <ViewAttribute
+    Name="Image"
+    IsQueriable="false"
+    PrecisionRule="true"
+    EntityAttrName="Image"
+    EntityUsage="SImage"
+    AliasName="IMAGE"/>
+  <ViewLinkAccessor
+    Name="SProductView"
+    ViewLink="views.oracle.summit.model.SProductImageIdFkLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+</ViewObject>

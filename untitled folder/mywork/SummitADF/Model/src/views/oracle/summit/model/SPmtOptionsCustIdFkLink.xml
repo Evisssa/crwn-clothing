@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="SPmtOptionsCustIdFkLink"
+  Version="12.1.3.10.47"
+  InheritPersonalization="merge"
+  EntityAssociation="entities.SPmtOptionsCustIdFkAssoc">
+  <ViewLinkDefEnd
+    Name="SCustomerView"
+    Cardinality="1"
+    Source="true"
+    Owner="views.SCustomerView">
+    <DesignTime>
+      <Attr Name="_finderName" Value="SCustomerView"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_minCardinality" Value="1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="views.SCustomerView.Id"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="SPaymentOptionsView"
+    Cardinality="-1"
+    Owner="views.SPaymentOptionsView">
+    <DesignTime>
+      <Attr Name="_finderName" Value="SPaymentOptionsView"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="views.SPaymentOptionsView.CustomerId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

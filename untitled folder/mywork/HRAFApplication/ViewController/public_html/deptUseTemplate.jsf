@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <af:document title="deptUseTemplate.jsf" id="d1">
+    <af:messages id="m1"/>
+    <af:form id="f1">
+      <af:pageTemplate viewId="/myPageTemplate.jsf" id="pt1">
+        <f:facet name="body">
+          <af:panelCollection id="pc1">
+            <f:facet name="menus"/>
+            <f:facet name="toolbar"/>
+            <f:facet name="statusbar"/>
+            <af:table value="#{bindings.DepartmentsView1.collectionModel}" var="row"
+                      rows="#{bindings.DepartmentsView1.rangeSize}"
+                      emptyText="#{bindings.DepartmentsView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                      rowBandingInterval="0" selectedRowKeys="#{bindings.DepartmentsView1.collectionModel.selectedRow}"
+                      selectionListener="#{bindings.DepartmentsView1.collectionModel.makeCurrent}" rowSelection="single"
+                      fetchSize="#{bindings.DepartmentsView1.rangeSize}" id="t1">
+              <af:column id="c8">
+                <af:button text="My employees" id="b1" action="empTemp"/>
+              </af:column>
+              <af:column headerText="#{bindings.DepartmentsView1.hints.DepartmentId.label}" id="c1">
+                <af:outputText value="#{row.DepartmentId}"
+                               shortDesc="#{bindings.DepartmentsView1.hints.DepartmentId.tooltip}" id="ot1">
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.DepartmentsView1.hints.DepartmentId.format}"/>
+                </af:outputText>
+              </af:column>
+              <af:column headerText="#{bindings.DepartmentsView1.hints.DepartmentName.label}" id="c2">
+                <af:outputText value="#{row.DepartmentName}"
+                               shortDesc="#{bindings.DepartmentsView1.hints.DepartmentName.tooltip}" id="ot2"/>
+              </af:column>
+              <af:column headerText="#{bindings.DepartmentsView1.hints.LocationId.label}" id="c3">
+                <af:outputText value="#{row.LocationId}"
+                               shortDesc="#{bindings.DepartmentsView1.hints.LocationId.tooltip}" id="ot3">
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.DepartmentsView1.hints.LocationId.format}"/>
+                </af:outputText>
+              </af:column>
+              <af:column headerText="#{bindings.DepartmentsView1.hints.ManagerId.label}" id="c4">
+                <af:outputText value="#{row.ManagerId}" shortDesc="#{bindings.DepartmentsView1.hints.ManagerId.tooltip}"
+                               id="ot4">
+                  <af:convertNumber groupingUsed="false" pattern="#{bindings.DepartmentsView1.hints.ManagerId.format}"/>
+                </af:outputText>
+              </af:column>
+              <af:column headerText="#{bindings.DepartmentsView1.hints.TLocationName.label}" id="c5">
+                <af:outputText value="#{row.TLocationName}"
+                               shortDesc="#{bindings.DepartmentsView1.hints.TLocationName.tooltip}" id="ot5"/>
+              </af:column>
+              <af:column headerText="#{bindings.DepartmentsView1.hints.TManagerF_Name.label}" id="c6">
+                <af:outputText value="#{row.TManagerF_Name}"
+                               shortDesc="#{bindings.DepartmentsView1.hints.TManagerF_Name.tooltip}" id="ot6"/>
+              </af:column>
+              <af:column headerText="#{bindings.DepartmentsView1.hints.TManagerL_Name.label}" id="c7">
+                <af:outputText value="#{row.TManagerL_Name}"
+                               shortDesc="#{bindings.DepartmentsView1.hints.TManagerL_Name.tooltip}" id="ot7"/>
+              </af:column>
+            </af:table>
+          </af:panelCollection>
+        </f:facet>
+        <f:facet name="title">
+          <af:outputText value="Display Title Text" id="ot8"/>
+        </f:facet>
+      </af:pageTemplate>
+    </af:form>
+  </af:document>
+</f:view>

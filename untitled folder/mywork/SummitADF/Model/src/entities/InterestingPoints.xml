@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="InterestingPoints"
+  Version="12.1.3.10.47"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="INTERESTING_POINTS"
+  AliasName="InterestingPoints"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="Id"
+    IsNotNull="true"
+    ColumnName="ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="INTERESTING_POINTS"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="Coordinates"
+    Domain="entities.PointType"
+    ColumnName="COORDINATES"
+    SQLType="STRUCT"
+    Type="entities.common.PointType"
+    ColumnType="POINT_TYPE"
+    TableName="INTERESTING_POINTS"/>
+  <Attribute
+    Name="Description"
+    Precision="20"
+    ColumnName="DESCRIPTION"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="INTERESTING_POINTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Key
+    Name="SysC008604"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C008604"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="entities.InterestingPoints.Id"/>
+    </AttrArray>
+  </Key>
+</Entity>

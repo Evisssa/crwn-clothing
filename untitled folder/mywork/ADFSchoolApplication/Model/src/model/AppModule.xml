@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE AppModule SYSTEM "jbo_03_01.dtd">
+<!---->
+<AppModule
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="AppModule"
+  Version="12.1.3.10.47"
+  InheritPersonalization="merge"
+  ClearCacheOnRollback="true">
+  <ViewUsage
+    Name="ClassroomsView1"
+    ViewObjectName="model.vo.ClassroomsView"/>
+  <ViewUsage
+    Name="SchoolInformationView1"
+    ViewObjectName="model.vo.SchoolInformationView"/>
+  <ViewUsage
+    Name="StudentClassView1"
+    ViewObjectName="model.vo.StudentClassView"/>
+  <ViewUsage
+    Name="StudentResultView1"
+    ViewObjectName="model.vo.StudentResultView"/>
+  <ViewUsage
+    Name="StudentsView1"
+    ViewObjectName="model.vo.StudentsView"/>
+  <ViewUsage
+    Name="TeacherClassesView1"
+    ViewObjectName="model.vo.TeacherClassesView"/>
+  <ViewUsage
+    Name="TeachersView1"
+    ViewObjectName="model.vo.TeachersView"/>
+  <ViewUsage
+    Name="StudentClassView2"
+    ViewObjectName="model.vo.StudentClassView"/>
+  <ViewUsage
+    Name="StudentResultView2"
+    ViewObjectName="model.vo.StudentResultView"/>
+  <ViewUsage
+    Name="TeacherClassesView2"
+    ViewObjectName="model.vo.TeacherClassesView"/>
+  <ViewLinkUsage
+    Name="ClassLinkStudent1"
+    ViewLinkObjectName="model.vo.ClassLinkStudent"
+    SrcViewUsageName="model.AppModule.ClassroomsView1"
+    DstViewUsageName="model.AppModule.StudentClassView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="StudentLinkResult1"
+    ViewLinkObjectName="model.vo.StudentLinkResult"
+    SrcViewUsageName="model.AppModule.StudentsView1"
+    DstViewUsageName="model.AppModule.StudentResultView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="TeacherLinkClasses1"
+    ViewLinkObjectName="model.vo.TeacherLinkClasses"
+    SrcViewUsageName="model.AppModule.TeachersView1"
+    DstViewUsageName="model.AppModule.TeacherClassesView2"
+    Reversed="false"/>
+</AppModule>

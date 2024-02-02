@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="DepartmentsView"
+  Version="12.1.3.10.47"
+  InheritPersonalization="merge"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  SelectList="Departments.DEPARTMENT_ID, 
+       Departments.DEPARTMENT_NAME, 
+       Departments.LOCATION_ID, 
+       Departments.MANAGER_ID"
+  FromList="DEPARTMENTS Departments">
+  <ViewAccessor
+    Name="LOVLocationsView1"
+    ViewObjectName="model.vo.LOVLocationsView"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="LOVEmployeesView1"
+    ViewObjectName="model.vo.LOVEmployeesView"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="LOVEmployeesView2"
+    ViewObjectName="model.vo.LOVEmployeesView"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="LOVEmployeesView3"
+    ViewObjectName="model.vo.LOVEmployeesView"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_LocationId"
+    ListVOName="LOVLocationsView1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0"
+    ComboRowCountHint="10">
+    <AttrArray Name="AttrNames">
+      <Item Value="LocationId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="TLocationName"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="LocationId"/>
+      <Item Value="StreetAddress"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="LocationId"/>
+      <Item Value="StreetAddress"/>
+      <Item Value="City"/>
+    </AttrArray>
+    <DisplayCriteria
+      Name="LOVLocationsViewCriteriaLOVDepartments"
+      Hint="showAndExecute"/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_ManagerId"
+    ListVOName="LOVEmployeesView3"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0"
+    ComboRowCountHint="10">
+    <AttrArray Name="AttrNames">
+      <Item Value="ManagerId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="TManagerF_Name"/>
+      <Item Value="TManagerL_Name"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="EmployeeId"/>
+      <Item Value="FirstName"/>
+      <Item Value="LastName"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="EmployeeId"/>
+      <Item Value="FirstName"/>
+      <Item Value="LastName"/>
+    </AttrArray>
+    <DisplayCriteria
+      Hint="showAndExecute"/>
+  </ListBinding>
+  <EntityUsage
+    Name="Departments"
+    Entity="model.eo.Departments"/>
+  <ViewAttribute
+    Name="DepartmentId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="DepartmentId"
+    EntityUsage="Departments"
+    AliasName="DEPARTMENT_ID"
+    IsUpdateable="while_insert"/>
+  <ViewAttribute
+    Name="DepartmentName"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="DepartmentName"
+    EntityUsage="Departments"
+    AliasName="DEPARTMENT_NAME"/>
+  <ViewAttribute
+    Name="LocationId"
+    PrecisionRule="true"
+    EntityAttrName="LocationId"
+    EntityUsage="Departments"
+    AliasName="LOCATION_ID"
+    LOVName="LOV_LocationId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ManagerId"
+    PrecisionRule="true"
+    EntityAttrName="ManagerId"
+    EntityUsage="Departments"
+    AliasName="MANAGER_ID"
+    LOVName="LOV_ManagerId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="TLocationName"
+    IsSelected="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="255"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="VIEW_ATTR"
+    SQLType="VARCHAR"
+    IsQueriable="false"/>
+  <ViewAttribute
+    Name="TManagerF_Name"
+    IsSelected="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="255"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="VIEW_ATTR"
+    SQLType="VARCHAR"
+    IsQueriable="false"/>
+  <ViewAttribute
+    Name="TManagerL_Name"
+    IsSelected="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="255"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="VIEW_ATTR"
+    SQLType="VARCHAR"
+    IsQueriable="false"/>
+  <ViewCriteria
+    Name="DepartmentsViewCriteriaManagerEqual100"
+    ViewObjectName="model.vo.DepartmentsView"
+    Conjunction="AND">
+    <Properties>
+      <CustomProperties>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+        <Property
+          Name="autoExecute"
+          Value="false"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="true"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+      </CustomProperties>
+    </Properties>
+  </ViewCriteria>
+  <ViewCriteria
+    Name="DepartmentsViewCriteriaManagerEquals200"
+    ViewObjectName="model.vo.DepartmentsView"
+    Conjunction="AND">
+    <Properties>
+      <CustomProperties>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+        <Property
+          Name="autoExecute"
+          Value="false"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="true"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteriaRow
+      Name="DepartmentsViewCriteria_row_0"
+      UpperColumns="1">
+      <ViewCriteriaItem
+        Name="DepartmentsViewCriteria_DepartmentsViewCriteria_row_0_DepartmentId"
+        ViewAttribute="DepartmentId"
+        Operator="="
+        Conjunction="AND"
+        Value="200"
+        Required="Optional"/>
+    </ViewCriteriaRow>
+  </ViewCriteria>
+  <ViewCriteria
+    Name="DepartmentsViewCriteriaSearch1"
+    ViewObjectName="model.vo.DepartmentsView"
+    Conjunction="AND">
+    <Properties>
+      <CustomProperties>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+        <Property
+          Name="autoExecute"
+          Value="true"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="false"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteriaRow
+      Name="DepartmentsViewCriteriaSearch1_row_0"
+      UpperColumns="1">
+      <ViewCriteriaItem
+        Name="DepartmentsViewCriteriaSearch1_DepartmentsViewCriteriaSearch1_row_0_DepartmentId"
+        ViewAttribute="DepartmentId"
+        Operator="="
+        Conjunction="AND"
+        Required="Optional"/>
+    </ViewCriteriaRow>
+  </ViewCriteria>
+  <ViewLinkAccessor
+    Name="EmployeesView"
+    ViewLink="model.vo.DeptLinkEmp"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+</ViewObject>

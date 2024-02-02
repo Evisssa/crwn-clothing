@@ -1,0 +1,53 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <View
+      id="View2">
+      <property
+         name="activityId">DepartmentTrain</property>
+      <property
+         name="start">true</property>
+      <property
+         name="page">/first_pages_deri27/departmentTrain.jsff</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>DepartmentTrain&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="trainStop">true</property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">252.94824</property>
+      <property
+         name="pageFragment">true</property>
+      <property
+         name="x">347.0</property>
+   </View>
+   <View
+      id="View3">
+      <property
+         name="activityId">employeeTrain</property>
+      <property
+         name="page">/first_pages_deri27/employeeTrain.jsff</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>employeeTrain&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="trainStop">true</property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">253.79297</property>
+      <property
+         name="x">554.0</property>
+      <property
+         name="pageFragment">true</property>
+   </View>
+   <TrainFlow
+      islink="true"
+      id="TrainFlow4"
+      from="View2"
+      to="View3">
+      <property
+         name="sdm:polyPoints">R50,388.0,252.59766,513.0,253.44238,L50</property>
+   </TrainFlow>
+</SDM>

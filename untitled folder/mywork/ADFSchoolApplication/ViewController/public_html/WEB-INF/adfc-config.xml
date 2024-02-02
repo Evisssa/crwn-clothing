@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <view id="Dashboard">
+    <page>/Dashboard.jsf</page>
+  </view>
+  <view id="classToTeacher">
+    <page>/classToTeacher.jsf</page>
+  </view>
+  <view id="studentToclass">
+    <page>/studentToclass.jsf</page>
+  </view>
+  <view id="StudentResults">
+    <page>/StudentResults.jsf</page>
+  </view>
+  <view id="SearchTeacher">
+    <page>/SearchTeacher.jsf</page>
+  </view>
+  <view id="SearchStudent">
+    <page>/SearchStudent.jsf</page>
+  </view>
+  <view id="Classrooms">
+    <page>/Classrooms.jsf</page>
+  </view>
+  <view id="Teachers">
+    <page>/Teachers.jsf</page>
+  </view>
+  <view id="Students">
+    <page>/Students.jsf</page>
+  </view>
+  <control-flow-rule id="__1">
+    <from-activity-id>*</from-activity-id>
+    <control-flow-case id="__2">
+      <from-outcome>dashboard</from-outcome>
+      <to-activity-id>Dashboard</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__3">
+      <from-outcome>classtoteacher</from-outcome>
+      <to-activity-id>classToTeacher</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__4">
+      <from-outcome>studenttoclass</from-outcome>
+      <to-activity-id>studentToclass</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__5">
+      <from-outcome>studentresults</from-outcome>
+      <to-activity-id>StudentResults</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__6">
+      <from-outcome>searchteacher</from-outcome>
+      <to-activity-id>SearchTeacher</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__7">
+      <from-outcome>searchstudent</from-outcome>
+      <to-activity-id>SearchStudent</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__8">
+      <from-outcome>classrooms</from-outcome>
+      <to-activity-id>Classrooms</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__9">
+      <from-outcome>teachers</from-outcome>
+      <to-activity-id>Teachers</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__10">
+      <from-outcome>students</from-outcome>
+      <to-activity-id>Students</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+</adfc-config>

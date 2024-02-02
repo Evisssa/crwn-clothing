@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <af:document title="Classrooms.jsf" id="d1">
+    <af:messages id="m1"/>
+    <af:form id="f1">
+      <af:pageTemplate viewId="/schooltemplateDef.jsf" id="pt1">
+        <f:facet name="body">
+          <af:panelGroupLayout id="pgl1">
+            <af:button actionListener="#{bindings.CreateInsert.execute}" text="CreateInsert"
+                       disabled="#{!bindings.CreateInsert.enabled}" id="b1"/>
+            <af:button actionListener="#{bindings.Delete.execute}" text="Delete" disabled="#{!bindings.Delete.enabled}"
+                       id="b2"/>
+            <af:button actionListener="#{bindings.Commit.execute}" text="Commit" disabled="#{!bindings.Commit.enabled}"
+                       id="b3"/>
+            <af:button actionListener="#{bindings.Rollback.execute}" text="Rollback"
+                       disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b4">
+              <af:resetActionListener/>
+            </af:button>
+          </af:panelGroupLayout>
+          <af:panelCollection id="pc1">
+            <f:facet name="menus"/>
+            <f:facet name="toolbar"/>
+            <f:facet name="statusbar"/>
+            <af:table value="#{bindings.ClassroomsView11.collectionModel}" var="row"
+                      rows="#{bindings.ClassroomsView11.rangeSize}"
+                      emptyText="#{bindings.ClassroomsView11.viewable ? 'No data to display.' : 'Access Denied.'}"
+                      rowBandingInterval="0" selectedRowKeys="#{bindings.ClassroomsView11.collectionModel.selectedRow}"
+                      selectionListener="#{bindings.ClassroomsView11.collectionModel.makeCurrent}" rowSelection="single"
+                      fetchSize="#{bindings.ClassroomsView11.rangeSize}" id="t1" partialTriggers=":::b1 :::b2">
+              <af:column headerText="#{bindings.ClassroomsView11.hints.RoomNumber.label}" id="c1">
+                <af:inputText value="#{row.bindings.RoomNumber.inputValue}"
+                              label="#{bindings.ClassroomsView11.hints.RoomNumber.label}"
+                              required="#{bindings.ClassroomsView11.hints.RoomNumber.mandatory}"
+                              columns="#{bindings.ClassroomsView11.hints.RoomNumber.displayWidth}"
+                              maximumLength="#{bindings.ClassroomsView11.hints.RoomNumber.precision}"
+                              shortDesc="#{bindings.ClassroomsView11.hints.RoomNumber.tooltip}" id="it1">
+                  <f:validator binding="#{row.bindings.RoomNumber.validator}"/>
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.ClassroomsView11.hints.RoomNumber.format}"/>
+                </af:inputText>
+              </af:column>
+              <af:column headerText="#{bindings.ClassroomsView11.hints.GradeNumber.label}" id="c2">
+                <af:selectOneChoice value="#{row.bindings.GradeNumber.inputValue}"
+                                    label="#{row.bindings.GradeNumber.label}"
+                                    required="#{bindings.ClassroomsView11.hints.GradeNumber.mandatory}"
+                                    shortDesc="#{bindings.ClassroomsView11.hints.GradeNumber.tooltip}" id="soc1">
+                  <f:selectItems value="#{row.bindings.GradeNumber.items}" id="si1"/>
+                  <f:validator binding="#{row.bindings.GradeNumber.validator}"/>
+                </af:selectOneChoice>
+              </af:column>
+            </af:table>
+          </af:panelCollection>
+        </f:facet>
+      </af:pageTemplate>
+    </af:form>
+  </af:document>
+</f:view>

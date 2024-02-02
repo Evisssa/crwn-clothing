@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <af:document title="datacontrol.jsf" id="d1">
+    <af:messages id="m1"/>
+    <af:form id="f1">
+      <af:pageTemplate viewId="/myPageTemplate.jsf" id="pt1">
+        <f:facet name="body">
+          <af:panelFormLayout id="pfl1">
+            <af:inputText value="#{bindings.DepartmentId.inputValue}" label="#{bindings.DepartmentId.hints.label}"
+                          required="#{bindings.DepartmentId.hints.mandatory}"
+                          columns="#{bindings.DepartmentId.hints.displayWidth}"
+                          maximumLength="#{bindings.DepartmentId.hints.precision}"
+                          shortDesc="#{bindings.DepartmentId.hints.tooltip}" id="it1">
+              <f:validator binding="#{bindings.DepartmentId.validator}"/>
+              <af:convertNumber groupingUsed="false" pattern="#{bindings.DepartmentId.format}"/>
+            </af:inputText>
+            <af:inputText value="#{bindings.DepartmentName.inputValue}" label="#{bindings.DepartmentName.hints.label}"
+                          required="#{bindings.DepartmentName.hints.mandatory}"
+                          columns="#{bindings.DepartmentName.hints.displayWidth}"
+                          maximumLength="#{bindings.DepartmentName.hints.precision}"
+                          shortDesc="#{bindings.DepartmentName.hints.tooltip}" id="it2">
+              <f:validator binding="#{bindings.DepartmentName.validator}"/>
+            </af:inputText>
+            <af:inputComboboxListOfValues id="locationIdId"
+                                          popupTitle="Search and Select: #{bindings.LocationId.hints.label}"
+                                          value="#{bindings.LocationId.inputValue}"
+                                          label="#{bindings.LocationId.hints.label}"
+                                          model="#{bindings.LocationId.listOfValuesModel}"
+                                          required="#{bindings.LocationId.hints.mandatory}"
+                                          columns="#{bindings.LocationId.hints.displayWidth}"
+                                          shortDesc="#{bindings.LocationId.hints.tooltip}">
+              <f:validator binding="#{bindings.LocationId.validator}"/>
+              <af:convertNumber groupingUsed="false" pattern="#{bindings.LocationId.format}"/>
+            </af:inputComboboxListOfValues>
+            <af:inputComboboxListOfValues id="managerIdId"
+                                          popupTitle="Search and Select: #{bindings.ManagerId.hints.label}"
+                                          value="#{bindings.ManagerId.inputValue}"
+                                          label="#{bindings.ManagerId.hints.label}"
+                                          model="#{bindings.ManagerId.listOfValuesModel}"
+                                          required="#{bindings.ManagerId.hints.mandatory}"
+                                          columns="#{bindings.ManagerId.hints.displayWidth}"
+                                          shortDesc="#{bindings.ManagerId.hints.tooltip}">
+              <f:validator binding="#{bindings.ManagerId.validator}"/>
+              <af:convertNumber groupingUsed="false" pattern="#{bindings.ManagerId.format}"/>
+            </af:inputComboboxListOfValues>
+            <af:inputText value="#{bindings.TLocationName.inputValue}" label="#{bindings.TLocationName.hints.label}"
+                          required="#{bindings.TLocationName.hints.mandatory}"
+                          columns="#{bindings.TLocationName.hints.displayWidth}"
+                          maximumLength="#{bindings.TLocationName.hints.precision}"
+                          shortDesc="#{bindings.TLocationName.hints.tooltip}" partialTriggers="locationIdId" id="it3">
+              <f:validator binding="#{bindings.TLocationName.validator}"/>
+            </af:inputText>
+            <af:inputText value="#{bindings.TManagerF_Name.inputValue}" label="#{bindings.TManagerF_Name.hints.label}"
+                          required="#{bindings.TManagerF_Name.hints.mandatory}"
+                          columns="#{bindings.TManagerF_Name.hints.displayWidth}"
+                          maximumLength="#{bindings.TManagerF_Name.hints.precision}"
+                          shortDesc="#{bindings.TManagerF_Name.hints.tooltip}" partialTriggers="managerIdId" id="it4">
+              <f:validator binding="#{bindings.TManagerF_Name.validator}"/>
+            </af:inputText>
+            <af:inputText value="#{bindings.TManagerL_Name.inputValue}" label="#{bindings.TManagerL_Name.hints.label}"
+                          required="#{bindings.TManagerL_Name.hints.mandatory}"
+                          columns="#{bindings.TManagerL_Name.hints.displayWidth}"
+                          maximumLength="#{bindings.TManagerL_Name.hints.precision}"
+                          shortDesc="#{bindings.TManagerL_Name.hints.tooltip}" partialTriggers="managerIdId" id="it5">
+              <f:validator binding="#{bindings.TManagerL_Name.validator}"/>
+            </af:inputText>
+            <f:facet name="footer">
+              <af:panelGroupLayout layout="vertical" id="pgl1">
+                <af:panelGroupLayout layout="horizontal" id="pgl2">
+                  <af:button actionListener="#{bindings.First.execute}" text="First"
+                             disabled="#{!bindings.First.enabled}" partialSubmit="true" id="b1"/>
+                  <af:button actionListener="#{bindings.Previous.execute}" text="Previous"
+                             disabled="#{!bindings.Previous.enabled}" partialSubmit="true" id="b2"/>
+                  <af:button actionListener="#{bindings.Next.execute}" text="Next" disabled="#{!bindings.Next.enabled}"
+                             partialSubmit="true" id="b3"/>
+                  <af:button actionListener="#{bindings.Last.execute}" text="Last" disabled="#{!bindings.Last.enabled}"
+                             partialSubmit="true" id="b4"/>
+                  <af:spacer width="10" height="10" id="s1"/>
+                  <af:button actionListener="#{bindings.CreateInsert.execute}" text="Create New Department"
+                             disabled="#{!bindings.CreateInsert.enabled}" id="b6"/>
+                  <af:button actionListener="#{bindings.Delete.execute}" text="Delete"
+                             disabled="#{!bindings.Delete.enabled}" id="b7"/>
+                  <af:button actionListener="#{bindings.Commit.execute}" text="Save"
+                             disabled="#{!bindings.Commit.enabled}" id="b8" partialTriggers="it2" partialSubmit="true"/>
+                  <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel"
+                             disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b9" partialTriggers="it2"
+                             partialSubmit="true">
+                    <af:resetActionListener/>
+                  </af:button>
+                </af:panelGroupLayout>
+              </af:panelGroupLayout>
+            </f:facet>
+          </af:panelFormLayout>
+        </f:facet>
+        <f:facet name="title"/>
+      </af:pageTemplate>
+    </af:form>
+  </af:document>
+</f:view>
