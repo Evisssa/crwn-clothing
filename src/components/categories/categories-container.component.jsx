@@ -1,4 +1,4 @@
-import './categories.style.scss'
+import './categories.style.scss'  ///aka at the github is directory
 
 const CategoriesContainer=()=>{
 
