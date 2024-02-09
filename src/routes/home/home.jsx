@@ -1,5 +1,7 @@
-import  CategoryItem from '../../components/category-item/category-item.component'
-//import './categories.style.scss'
+
+//import '../../components/directory/directory-container.style.scss'
+import Directory from '../../components/directory/directory-container.component.jsx'
+import { Outlet } from 'react-router-dom';
   const Home = ()=> {
 
   const categories = [
@@ -31,13 +33,13 @@ import  CategoryItem from '../../components/category-item/category-item.componen
   ]
   
   return (
-    <div className="categories-container">
-
-      {categories.map((category) =>
-      (<CategoryItem key={category.id}  category={category}/>)
-  )}
-    </div>
+  <div>
+    <Outlet/>
+    <Directory categories={categories}/>
+  </div>
   );
+  
+  
 }
 
 export default Home;
