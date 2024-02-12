@@ -1,4 +1,4 @@
-//import { Fragment } from 'react';
+import { Fragment } from 'react';
 //import { Outlet, Link } from 'react-router-dom';
 
 import { auth,
@@ -24,12 +24,12 @@ const Signin=()=>{
 
     return(
         
-        <div >
+        <Fragment>
             <h1>Sign In page </h1> 
              <button onClick={logGoogleUser}>Sign in with Google popup</button>  
              <SignUpForm/>
 
-        </div>
+        </Fragment>
     )
 }
 
