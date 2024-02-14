@@ -1,8 +1,6 @@
 import { useState, useContext } from 'react';
 import FormInput from '../formInput/formInput';
 import Button from '../button/button-component';
-
-import { UserContext } from '../../contexts/user.context'
 import { auth,
         signInWithGooglePopup ,
         signInWithGoogleRedirect,
@@ -23,14 +21,11 @@ const Signin=()=>{
     const [formFields, setFormFields] = useState(defaultFormFields);
     const {email,password} = formFields;
 
-    const { setCurrentUser} = useContext(UserContext);
-    
     console.log(formFields);
 
     const logGoogleUser = async() => {
-        const {user} = await signInWithGooglePopup();
-        console.log(user.displayName)
-       const userDocRef = await createUserDocumentFromAuth(user);
+       await signInWithGooglePopup();
+ 
     }
    
     const handleChange =(event) =>{
@@ -52,7 +47,7 @@ const Signin=()=>{
                 email,
                 password
                 );
-            setCurrentUser(user);
+
             resetFormField();
             
         } catch (error) {
