@@ -13,7 +13,11 @@ export const ProductsProvider = ({ children }) => {
    // const [currentProd,setCurrentProd]= useState(null);
     const value = {products};
 
-   
+    return (
+        <ProductsContext.Provider value={value}>
+        {children}
+        </ProductsContext.Provider>
 
-    return <ProductsContext.Provider value={value}>{children}</ProductsContext.Provider>
+    )
+    
 }
