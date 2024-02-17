@@ -9,12 +9,16 @@ const Checkout = () =>{
 
   const {cartItems} = useContext(CartContext);
 
-
+  const cartTotal = cartItems.reduce((total,currentItem)=>{return(total+currentItem.price*currentItem.quantity)},0)
+  
 
   
 
   return(
-    <table className="checkout-container">
+
+    <div>
+
+<table className="checkout-container">
       <tr className="checkout-header">
       <td className='header-column'>
           Product
@@ -37,13 +41,21 @@ const Checkout = () =>{
 
       </tr>
       
-      
       { cartItems.length?
         ( cartItems.map(item=><CheckoutItem  key={item.id} cartItem={item}/>) )
         : (<span>NO ITEMS TO CART</span>)
        
         }
+
+      <tr className="cart-total">Total :{cartTotal}</tr>
+
     </table>
+        
+    </div>
+    
+
+
+
 
   )
 } 
