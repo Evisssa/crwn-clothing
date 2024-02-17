@@ -40,7 +40,7 @@ const CheckoutItem =({cartItem})=>{
 
 <td className='quantity'>
 <td className='arrow' onClick={removeItem}>  &#10094; </td>
-<td className='quantity'>{quantity} </td>
+<td className='value'>{quantity} </td>
 <td className='arrow' onClick={addItem}> &#10095; </td>
 
 

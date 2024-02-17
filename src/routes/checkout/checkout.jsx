@@ -31,7 +31,7 @@ const Checkout = () =>{
         </td>
 
         <td className='remove-column'>
-          Remove
+        &#10005;
         </td>
 
 
