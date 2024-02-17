@@ -12,12 +12,16 @@ const CartIcon = () =>{
     const {isCartOpen, setIsCartOpen} = useContext(CartContext);
     console.log('isCartOpen:', isCartOpen);
     const toogleIsCardOpen =()=> setIsCartOpen(!isCartOpen);
+    const {cartItems} = useContext(CartContext);
+    const num = cartItems.reduce((accumulator, currentItem) => {
+        return accumulator + currentItem.quantity;
+      }, 0);
 
  
     return(
         <div className='cart-icon-container' onClick={toogleIsCardOpen}>
           <ShoppingIcon className='shopping-icon' />
-          <span className='item-count'>0</span>
+          <span className='item-count'>{num}</span>
         </div>
     )
 };
