@@ -47,7 +47,7 @@ const Checkout = () =>{
        
         }
 
-      <tr className="cart-total">Total :{cartTotal}</tr>
+      <tr className="cart-total">Total :${cartTotal}</tr>
 
     </table>
         
