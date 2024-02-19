@@ -16,6 +16,8 @@ import {
         setDoc,
         collection,
         writeBatch,
+        query,
+        getDocs,
         } from 'firebase/firestore'
 
 const firebaseConfig = {
@@ -57,6 +59,35 @@ const firebaseConfig = {
     console.log('Done');
 
   }
+
+
+  export const getCategoriesAndDocuments = async()=>{
+
+    //Get a reference to the 'categories' collection in Firestore
+    const collectionRef = collection(db,'categories');
+
+    //Create a query for the 'categories' collection
+    const q = query(collectionRef);
+   
+
+    //Execute the query and get the documents
+
+    const querySnapshot = await getDocs(q);
+    console.log('snapshot',querySnapshot)
+
+
+    //Initialize an empty object to store category mappings
+    const categoryMappings= querySnapshot.docs.reduce((acc, docSnapshot)=>{
+      const {title,items} = docSnapshot.data();
+      acc[title.toLowerCase()] = items;
+      console.log('acc',acc.items)
+      return acc;
+    },{})
+
+    return categoryMappings;
+  }
+
+
 
   export const createUserDocumentFromAuth = async (
     userAuth,
