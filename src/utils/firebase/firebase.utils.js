@@ -73,17 +73,18 @@ const firebaseConfig = {
     //Execute the query and get the documents
 
     const querySnapshot = await getDocs(q);
-    console.log('snapshot',querySnapshot)
+   // console.log('snapshot',querySnapshot)
 
 
     //Initialize an empty object to store category mappings
     const categoryMappings= querySnapshot.docs.reduce((acc, docSnapshot)=>{
       const {title,items} = docSnapshot.data();
       acc[title.toLowerCase()] = items;
-      console.log('acc',acc.items)
+   
       return acc;
     },{})
 
+    console.log('CM',categoryMappings);
     return categoryMappings;
   }
 
