@@ -1,7 +1,14 @@
 import { useContext } from 'react';
-import './product-card.scss'
-import Button from '../button/button-component'
-import { CartContext } from '../../contexts/cart.context';
+import path from 'path';
+
+// Assuming Button and CartContext are in the same directory as the file importing them
+const buttonPath = path.join(__dirname, '../button/button-component');
+const cartContextPath = path.join(__dirname, '../../contexts/cart.context');
+
+import './product-card.scss';
+import Button from buttonPath;
+import { CartContext } from cartContextPath;
+
 
 const ProductCard =({product}) =>{
 

@@ -1,9 +1,15 @@
 import { useContext } from 'react';
-import { ReactComponent as ShoppingIcon } from '../../assets/shopping-bag.svg'
-import './cart-icon.scss'
-/// me duhet me marr gjendjen e isOpen // qe e kam te 
+import path from 'path';
 
-import { CartContext } from '../../contexts/cart.context';
+// Assuming CartContext, ShoppingIcon, and cart-icon.scss are in the same directory as the file importing them
+const cartContextPath = path.join(__dirname, '../../contexts/cart.context');
+const shoppingIconPath = path.join(__dirname, '../../assets/shopping-bag.svg');
+
+import { CartContext } from cartContextPath;
+import { ReactComponent as ShoppingIcon } from shoppingIconPath;
+
+import './cart-icon.scss';
+
 
 
 

@@ -1,8 +1,14 @@
 import { useContext } from "react";
-import CheckoutItem from "../../components/checkout-item/checkout-item";
+import path from 'path';
 
+import CheckoutItem from "../../components/checkout-item/checkout-item";
 import { CartContext } from '../../contexts/cart.context';
-import './checkout.scss'
+import './checkout.scss';
+
+// Assuming CheckoutItem is in the same directory as checkout.scss
+const checkoutItemPath = path.join(__dirname, '../../components/checkout-item/checkout-item');
+import CheckoutItem from checkoutItemPath;
+
 
 
 const Checkout = () =>{

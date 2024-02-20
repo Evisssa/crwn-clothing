@@ -1,14 +1,19 @@
 import { useState, useContext } from 'react';
-import FormInput from '../formInput/formInput';
-import Button from '../button/button-component';
-import { auth,
-        signInWithGooglePopup ,
-        signInWithGoogleRedirect,
-        createUserDocumentFromAuth,
-        signAuthUserWithEmailAndPassword,
-        } from '../../utils/firebase/firebase.utils';
+import path from 'path';
+
+// Assuming FormInput, Button, and the firebase utils are in the same directory as the file importing them
+const formInputPath = path.join(__dirname, '../formInput/formInput');
+const buttonPath = path.join(__dirname, '../button/button-component');
+const firebaseUtilsPath = path.join(__dirname, '../../utils/firebase/firebase.utils');
+
+import FormInput from formInputPath;
+import Button from buttonPath;
+
+// Assuming auth, signInWithGooglePopup, signInWithGoogleRedirect, createUserDocumentFromAuth, and signAuthUserWithEmailAndPassword are exported from firebase.utils
+import { auth, signInWithGooglePopup, signInWithGoogleRedirect, createUserDocumentFromAuth, signAuthUserWithEmailAndPassword } from firebaseUtilsPath;
 
 import './signin.scss';
+
 
 const defaultFormFields = {
     email : '',

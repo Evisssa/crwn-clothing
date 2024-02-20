@@ -1,6 +1,8 @@
-import './directory-container.style.scss'  ///aka at the github is directory
-import  CategoryItem from '../../components/category-item/category-item.component'
+import path from 'path';
 
+// Assuming CategoryItem is in a different directory
+const categoryItemPath = path.join(__dirname, '../../components/category-item/category-item.component');
+import CategoryItem from categoryItemPath;
 
 const Directory=({categories})=>{
 

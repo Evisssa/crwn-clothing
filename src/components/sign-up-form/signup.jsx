@@ -1,11 +1,17 @@
-import {useState, useContext}from 'react';
+import { useState, useContext } from 'react';
+import path from 'path';
 
-import { createAuthUserWithEmailAndPassword,
-         createUserDocumentFromAuth, } from '../../utils/firebase/firebase.utils';
+import { createAuthUserWithEmailAndPassword, createUserDocumentFromAuth } from '../../utils/firebase/firebase.utils';
 
-import FormInput from '../formInput/formInput';
+// Assuming FormInput, './signup.scss', and Button are in the same directory as the file importing them
+const formInputPath = path.join(__dirname, '../formInput/formInput');
+const signupScssPath = path.join(__dirname, './signup.scss');
+const buttonPath = path.join(__dirname, '../button/button-component');
+
+import FormInput from formInputPath;
 import './signup.scss';
-import Button from '../button/button-component';
+import Button from buttonPath;
+
 
 const defaultFormFields = {
     displayName : '',

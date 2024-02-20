@@ -1,15 +1,20 @@
 
-import { useContext } from 'react'; 
+import { useContext } from 'react';
+import path from 'path';
 import { useNavigate } from 'react-router-dom';
-import Button from '../button/button-component';
-import { CartContext } from '../../contexts/cart.context';
-import CartItem from '../cart-item/cart-item'
-import './cart-dropdown.scss'
+
+// Assuming Button, CartContext, CartItem, and cart-dropdown.scss are in the same directory as the file importing them
+const buttonPath = path.join(__dirname, '../button/button-component');
+const cartContextPath = path.join(__dirname, '../../contexts/cart.context');
+const cartItemPath = path.join(__dirname, '../cart-item/cart-item');
+
+import Button from buttonPath;
+import { CartContext } from cartContextPath;
+import CartItem from cartItemPath;
+
+import './cart-dropdown.scss';
 
 import { Outlet, Link } from 'react-router-dom';
-
-
-
 
 
 

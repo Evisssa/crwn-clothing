@@ -1,5 +1,9 @@
 import { render, screen } from '@testing-library/react';
-import App from './App';
+import path from 'path';
+
+const appPath = path.join(__dirname, 'App');
+
+import App from appPath;
 
 test('renders learn react link', () => {
   render(<App />);

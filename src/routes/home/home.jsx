@@ -1,6 +1,9 @@
 
 //import '../../components/directory/directory-container.style.scss'
-import Directory from '../../components/directory/directory-container.component.jsx'
+import path from 'path';
+const directoryPath = path.join(__dirname, '../../components/directory/directory-container.component.jsx');
+import Directory from directoryPath;
+
 import { Outlet } from 'react-router-dom';
   const Home = ()=> {
 

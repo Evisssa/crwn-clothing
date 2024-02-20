@@ -1,7 +1,17 @@
-import { createContext,useState,useEffect } from 'react';
-import {addCollectionAndDocuments, getCategoriesAndDocuments } from '../utils/firebase/firebase.utils.js'
+import { createContext, useState, useEffect } from 'react';
+import path from 'path';
 
+import { addCollectionAndDocuments, getCategoriesAndDocuments } from '../utils/firebase/firebase.utils.js';
 import SHOP_DATA from '../shop-data.js';
+
+// Assuming the firebase.utils.js file is in the same directory as the file importing it
+const firebaseUtilsPath = path.join(__dirname, '../utils/firebase/firebase.utils.js');
+import { addCollectionAndDocuments, getCategoriesAndDocuments } from firebaseUtilsPath;
+
+// Assuming SHOP_DATA is in the same directory as the file importing it
+const shopDataPath = path.join(__dirname, '../shop-data.js');
+import SHOP_DATA from shopDataPath;
+
 
 export const CategoriesContext = createContext({
     categoryMap :{},

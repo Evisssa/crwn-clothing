@@ -1,7 +1,15 @@
-import { useContext , Fragment} from 'react';
-import { CategoriesContext} from '../../contexts/categories.context';
-import ProductCard from '../product-card/product-card-component'
+import { useContext, Fragment } from 'react';
+import path from 'path';
+
+// Assuming CategoriesContext and ProductCard are in the same directory as the file importing them
+const categoriesContextPath = path.join(__dirname, '../../contexts/categories.context');
+const productCardPath = path.join(__dirname, '../product-card/product-card-component');
+
+import { CategoriesContext } from categoriesContextPath;
+import ProductCard from productCardPath;
+
 import './shop.scss';
+
 
 const Shop = () =>{
     const {categoriesMap} = useContext(CategoriesContext);
