@@ -9,7 +9,7 @@ const Shop = () =>{
     return (
       <Routes>
         <Route path='/' element= {<CategoriesPreview />}/>
-        <Route path=':prodTitle' element={<Category />}/>
+      
       </Routes>
     )
    
