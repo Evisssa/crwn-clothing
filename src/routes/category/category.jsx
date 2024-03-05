@@ -7,10 +7,11 @@ import ProductCard from "../../components/product-card/product-card-component";
 const Category =() =>{
 
     console.log('in categoryyyy');
-    const category = useParams();
-    console.log('------------------category ', category.category);
+    const category_JSON = useParams();
+    const category= category_JSON.category;
+    console.log('------------------category ', category);
     const categoriesMap = useContext(CategoriesContext);
-    const  [products, setProducts] = useState(categoriesMap[category.category])
+    const  [products, setProducts] = useState(categoriesMap[category])
 
 
     useEffect( ()=>{
@@ -22,7 +23,7 @@ const Category =() =>{
  
       return (
         <>
-        <h2 className='category-title'>{category.category.toUpperCase()}</h2>
+        <h2 className='category-title'>{category.toUpperCase()}</h2>
             {products && products.map((product)=>
                         (
                             <ProductCard  key={product.id} product={product}/>
