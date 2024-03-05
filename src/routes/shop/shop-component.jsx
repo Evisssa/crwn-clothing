@@ -8,21 +8,12 @@ const Shop = () =>{
 
     return (
       <Routes>
-        <Route path='/' element= {<CategoriesPreview />}/>
-      
+        <Route index element={<CategoriesPreview />}/>
+        <Route path=":category" element={<Category/>}/>
+    
       </Routes>
     )
    
 
-}
-
-
-
-
- export default Shop;
-
-
- //  /* products.map((product)=>(
- //</div>   <ProductCard key={product.id} product={product}/>                  
- //   ))  
-  //  */
+    }
+    export default Shop;
