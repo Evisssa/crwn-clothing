@@ -7,19 +7,29 @@ import ProductCard from "../../components/product-card/product-card-component";
 const Category =() =>{
 
     console.log('in categoryyyy');
-    const category_JSON = useParams();
-    const category= category_JSON.category;
-    console.log('------------------category ', category);
-    const categoriesMap = useContext(CategoriesContext);
+    const {category} = useParams();
+   /// const category = useParams().category;
+   // const category= category_JSON.category;
+    console.log('-0-----------------category ', category);
+    const {categoriesMap} = useContext(CategoriesContext);
+    console.log('-1--categoriesMap["hats"]', categoriesMap["hats"])
     const  [products, setProducts] = useState(categoriesMap[category])
+    
+    console.log('-2--categoriesMap', categoriesMap)
+    console.log('-3--products', products)
 
 
+    console.log('-4--categoriesMap["hats"]', categoriesMap["hats"])
     useEffect( ()=>{
-        setProducts(categoriesMap[category]);
+
+        if (categoriesMap && categoriesMap[category]){
+            setProducts(categoriesMap[category]);
+        }
+       
       }, [category, categoriesMap]);
 
-
-      console.log('in categoryyyy');
+      console.log('-5--products', products)
+      console.log('-6--in categoryyyy');
  
       return (
         <>

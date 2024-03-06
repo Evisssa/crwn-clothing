@@ -85,6 +85,8 @@ const firebaseConfig = {
     },{})
 
     console.log('CM',categoryMappings);
+    
+    console.log('-4--categoryMappings["hats"]', categoryMappings["hats"])
     return categoryMappings;
   }
 
