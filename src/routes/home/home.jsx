@@ -4,6 +4,7 @@ import Directory from '../../components/directory/directory-container.component.
 import { Outlet } from 'react-router-dom';
   const Home = ()=> {
 
+
   const categories = [
     {
       "id": 1,
@@ -31,6 +32,7 @@ import { Outlet } from 'react-router-dom';
       "imageUrl": "https://i.ibb.co/R70vBrQ/men.png"
     }
   ]
+  
   
   return (
   <div>

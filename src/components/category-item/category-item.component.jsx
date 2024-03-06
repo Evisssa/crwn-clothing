@@ -1,3 +1,4 @@
+import {Link } from   "react-router-dom";
 import './category-item.style.scss'
 
 const CategoryItem =({category}) =>{
@@ -8,10 +9,16 @@ const CategoryItem =({category}) =>{
     <div className="background-image" style={{
       backgroundImage: `url(${imageUrl})`
     }}/>
-    <div className="category-body-container">
-      <h2>{title}</h2>
-      <p>Shop now</p>
-    </div>
+
+    
+      <div className="category-body-container">
+        <Link to={title} >
+         <h2>{title.toUpperCase()}</h2>
+         <p>Shop now</p>
+        </Link>
+      </div>
+   
+
     </div>
     )
 
