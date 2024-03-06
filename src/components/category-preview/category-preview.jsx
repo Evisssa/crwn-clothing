@@ -1,6 +1,7 @@
 import { Fragment} from 'react';
 import {Link } from   "react-router-dom";
 import ProductCard from '..//product-card/product-card-component';
+import './category-preview.scss'
 
 
 const CategoryPreview=({ title, products }) =>{
